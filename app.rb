@@ -4,6 +4,19 @@ require 'bundler/setup'
 
 require 'sinatra'
 
-get '/:what?' do
-  "#{params[:what]||'人間'}が死ぬ"
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+
+get '/' do
+  haml :index
+end
+
+post '/' do
+  redirect "/#{params[:user_name]}/counseling"
+end
+
+get '/:user_name/counseling' do
+  haml :counseling, locals: {user_name: params[:user_name]}
 end

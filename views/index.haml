@@ -1,0 +1,16 @@
+-# coding: utf-8
+!!!html
+%head
+  %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8'}
+  %title U2Gift 〜 つらぽよ各位に捧ぐオンラインカウンセリングサービス 〜
+%body
+  %h1 U2Gift 〜 つらぽよ各位に捧ぐオンラインカウンセリングサービス 〜
+
+  %h2 このサイトについて
+  %p
+    つらそうな人にメッセージを送って応援できます
+  %h2 つらそうな人を応援する
+  %form{action: '/', method: 'POST'}
+    %label{for: 'user_name'} つらそうな人のTwitter ID
+    %input{type: 'text', name: 'user_name', id: 'user_name'}
+    %input{type: 'submit', value: '通報'}
